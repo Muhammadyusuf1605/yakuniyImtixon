@@ -17,7 +17,7 @@ import Signup from "./pages/Signup";
 // importcomponents
 import ProtectedRoutes from "./components/ProtectedRoutes";
 // import firebase
-import { auth } from "./firebase/firebaseConfig";
+import { auth } from './firebase/firebaseConfig'
 import { onAuthStateChanged } from "firebase/auth";
 
 function App() {
