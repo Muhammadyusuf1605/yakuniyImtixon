@@ -10,7 +10,7 @@ import { useState } from "react";
 
 
 function Header() {
-  const [mode, setMode] = useState(localStorage.getItem('mode') || false)
+  const [mode, setMode] = useState(localStorage.getItem('mode') || true)
   const togleMode = () => {
     setMode(!mode)
   }
