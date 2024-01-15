@@ -10,17 +10,23 @@ import { useState } from "react";
 
 
 function Header() {
-  const [mode, setMode] = useState(localStorage.getItem('mode') || true)
+  const [mode, setMode] = useState(JSON.parse(localStorage.getItem('mode'))) || true
   const togleMode = () => {
+    if (mode) {
+      JSON.stringify(localStorage.setItem('mode', false))
+      document.querySelector('html').classList.remove('dark')
+    } else {
+      JSON.stringify(localStorage.setItem('mode', true))
+      document.querySelector('html').classList.add('dark')
+    }
     setMode(!mode)
   }
   if (mode) {
-    localStorage.setItem('mode', true)
     document.querySelector('html').classList.remove('dark')
   } else {
-    localStorage.setItem('mode', false)
     document.querySelector('html').classList.add('dark')
   }
+  console.log(mode);
   return (
     <div className="header-container dark:bg-[#181920]">
       <div className="container flex justify-between items-center">

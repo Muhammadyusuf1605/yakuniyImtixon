@@ -10,6 +10,10 @@ function SingleProduct({inputVal}) {
     const radiovalue = (color) => {
         setRadiovalu(color)
     }
+
+    const singleProdSubmit = (e) => {
+        e.preventDefault()
+    }
     useEffect(() => {
         console.log("O'zgardi");
     }, [singleUrl])
@@ -27,7 +31,7 @@ function SingleProduct({inputVal}) {
                             </li>
                         </ul>
                     </div>
-                    <div className="mt-6 grid gap-y-8 lg:grid-cols-2 lg:gap-x-16">
+                    <form onSubmit={(e) => singleProdSubmit(e)} className="mt-6 grid gap-y-8 lg:grid-cols-2 lg:gap-x-16">
                         <img src={singleProduct && singleProduct.data.attributes.image} alt="" className="w-96 h-96 object-cover rounded-lg lg:w-full" />
                         <div>
                             <h1 className="capitalize text-3xl font-bold">{singleProduct && singleProduct.data.attributes.title}</h1>
@@ -70,10 +74,10 @@ function SingleProduct({inputVal}) {
                                     <option value="19">19</option>
                                     <option value="20">20</option>
                                 </select></div><div className="mt-10">
-                                <button className="btn btn-secondary btn-md">Add to bag</button>
+                                <button type="submit" className="btn btn-secondary btn-md">Add to bag</button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>}</>
     )
