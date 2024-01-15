@@ -4,9 +4,9 @@ import { Link } from "react-router-dom"
 function FeaturesProduct({products}) {
   return (
     <div className="pb-4">
-      <h2>Featured Products</h2>
+      <h2 className="text-3xl pb-5 font-bold text-[#394E6A]">Featured Products</h2>
       <hr />
-      <div className="pt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="pt-12 pb-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {products &&
           products.data.map((product) => {
             return (

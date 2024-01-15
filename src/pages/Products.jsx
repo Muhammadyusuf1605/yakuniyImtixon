@@ -103,7 +103,10 @@ function Products() {
             <span className="font-bold text-md">Max : $1,000.00</span>
             </div>
           </div>
+          <div className="flex flex-col justify-center items-center gap-2">
+            <h2 className="text-base">Free Shipping</h2>
           <input type="checkbox" name="shipping" className="checkbox checkbox-primary checkbox-sm mr-auto ml-auto" ref={checbox} defaultChecked={checboxy}/>
+          </div>
           <button type="submit" className="btn btn-active btn-primary">Search</button>
           <button type="button" onClick={() => resetSubmit()} className="btn btn-secondary">Reset</button>
         </form>
